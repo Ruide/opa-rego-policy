@@ -1,4 +1,4 @@
-package kubernetes.admission
+package kubernetes.authz
 
 import rego.v1
 

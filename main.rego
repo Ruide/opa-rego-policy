@@ -2,7 +2,7 @@ package system
 
 import rego.v1
 
-import data.kubernetes.admission
+import data.kubernetes.authz
 
 main := {
 	"apiVersion": "authorization.k8s.io/v1beta1",
@@ -14,7 +14,7 @@ status := {
 	"allowed": false,
 	"reason": reason,
 } if {
-	reason = concat(", ", admission.deny)
+	reason = concat(", ", authz.deny)
 	reason != ""
 }
 
